@@ -1,25 +1,101 @@
-$(document).ready(function(){
-  //$('#text-input').keypress(preview);
-  $('#preview-section').hide();
-});
 
-//función para agregar texto del textarea al preview
-/*var preview = function(){
-  var $text = $('#text-input').val();
-  console.log($text);*/
-  //creando contenedor
-  //var $previewContainer = ('<div/>');
-  //agregando el texto
-  //$previewContainer.text($text);
+//value del input (comentario)
+var textInput = document.getElementById('input');
+/*var textInputValue = textInput.value;
+console.log(textInputValue);*/
+
+//llamando botones
+/*var largeBtn = document.getElementById('large-btn');
+var mediumBtn = document.getElementById('medium-btn');
+var smallBtn = document.getElementById('small-btn');
+var textBtn = document.getElementById('text-btn');
+var backgroundBtn = document.getElementById('background-btn');
+var leftBtn = document.getElementById('left-btn');
+var centerBtn = document.getElementById('center-btn');
+var rightBtn = document.getElementById('right-btn');
+var preview = document.getElementById('preview');*/
+
+//funcion para pintar value del input en preview
+function preview() {
+  var textInput = document.getElementById('input');
+  var textInputValue = textInput.value;
+  console.log(textInputValue);
+  //creando elementos
+  var preview = document.getElementById('preview');
+  //añadiendo estilos
+  preview.innerText = textInputValue
+
+  //funcion para dan funcionalidad al boton large
+  var largeBtn = document.getElementById('large-btn')
+
+  function large() {
+    preview.style.fontSize = '80px';
+  }
+  largeBtn.onclick = large;
+
+  //funcion para dan funcionalidad al boton medium
+  var mediumBtn = document.getElementById('medium-btn')
+
+  function medium() {
+    preview.style.fontSize = '30px';
+  }
+  mediumBtn.onclick = medium;
+
+  //funcion para dan funcionalidad al botón small
+  var smallBtn = document.getElementById('small-btn')
+
+  function small() {
+    preview.style.fontSize = '10px';
+  }
+  smallBtn.onclick = small;
+
+  //funcion para dan funcionalidad al botón text-color
+  var textColorBtn = document.getElementById('text-btn')
+
+  function textColor() {
+    var promptColor = prompt('Escribe el color de tu texto')
+    preview.style.color = promptColor;
+  }
+  textColorBtn.onclick = textColor;
+
+  //funcion para dan funcionalidad al botón background-color
+  var backgroundColorBtn = document.getElementById('background-btn')
+
+  function backgroundColor() {
+    var promptBackground = prompt('Escribe el color de tu fondo')
+    preview.style.backgroundColor = promptBackground;
+  }
+  backgroundColorBtn.onclick = backgroundColor;
+
+  //funcion para dan funcionalidad al botón left-align
+  var leftBtn = document.getElementById('left-btn')
+
+  function leftAling() {
+    preview.style.textAlign = 'left';
+  }
+  leftBtn.onclick = leftAling;
+
+  //funcion para dan funcionalidad al botón center-align
+  var centerBtn = document.getElementById('center-btn')
+
+  function centerAling() {
+    preview.style.textAlign = 'center';
+  }
+  centerBtn.onclick = centerAling;
+
+  //funcion para dan funcionalidad al botón center-align
+  var rightBtn = document.getElementById('right-btn')
+
+  function rightAling() {
+    preview.style.textAlign = 'right';
+  }
+  rightBtn.onclick = rightAling;
+
+
+
+  //añadiendo al HTML
+  var previewContainer = document.getElementById('preview-section');
+  previewContainer.appendChild(preview);
 }
+textInput.onkeyup = preview;
 
-//función para crear el contenedor del preview text
- $('#text-input').click(function(){
-   $('#preview-section').show();
- });
-
-//función para guardar el value del text area  y mostrarlo en el preview
- $('#text-input').keypress(function(){
-   var $text = $('#text-input').val();
-   console.log($text);
- });
