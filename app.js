@@ -1,29 +1,18 @@
 
-//value del input (comentario)
+//input (comentario)
 var textInput = document.getElementById('input');
-/*var textInputValue = textInput.value;
-console.log(textInputValue);*/
-
-//llamando botones
-/*var largeBtn = document.getElementById('large-btn');
-var mediumBtn = document.getElementById('medium-btn');
-var smallBtn = document.getElementById('small-btn');
-var textBtn = document.getElementById('text-btn');
-var backgroundBtn = document.getElementById('background-btn');
-var leftBtn = document.getElementById('left-btn');
-var centerBtn = document.getElementById('center-btn');
-var rightBtn = document.getElementById('right-btn');
-var preview = document.getElementById('preview');*/
 
 //funcion para pintar value del input en preview
-function preview() {
+function commentPreview() {
   var textInput = document.getElementById('input');
   var textInputValue = textInput.value;
-  console.log(textInputValue);
+  newComment(textInputValue);
+  //console.log(textInputValue);
   //creando elementos
   var preview = document.getElementById('preview');
   //añadiendo estilos
   preview.innerText = textInputValue
+
 
   //funcion para dan funcionalidad al boton large
   var largeBtn = document.getElementById('large-btn')
@@ -96,6 +85,8 @@ function preview() {
   //añadiendo al HTML
   var previewContainer = document.getElementById('preview-section');
   previewContainer.appendChild(preview);
+  //comment();
 }
-textInput.onkeyup = preview;
+textInput.onkeyup = commentPreview;
+
 
